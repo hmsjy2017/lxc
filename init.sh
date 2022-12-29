@@ -5,10 +5,10 @@
 # 2022.12.20
 
 rm -rf log
-lxc init images:debian/10 "$1" -c limits.cpu=1 -c limits.memory=256MiB
+lxc init images:debian/11 "$1" -c limits.cpu=1 -c limits.memory=128MiB
 # 硬盘大小
-lxc config device override "$1" root size=1GB
-lxc config device set "$1" root limits.max 1GB
+lxc config device override "$1" root size=2GB
+lxc config device set "$1" root limits.max 2GB
 # IO
 lxc config device set "$1" root limits.read 100MB
 lxc config device set "$1" root limits.write 100MB
